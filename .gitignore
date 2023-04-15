@@ -1,0 +1,18 @@
+# Compiled class files
+target/
+
+# Maven build output
+log/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code project files
+.vscode/
