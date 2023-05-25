@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  localstack:
+    container_name: LocalStack
+    image: sqs-lambda-function:latest
+    ports:
+      - 4566:4566
+    environment:
+      - AWS_DEFAULT_REGION=us-east-2
+      - AWS_ACCESS_KEY_ID=aws
+      - AWS_SECRET_ACCESS_KEY=awskey
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - "${TMPDIR:-/tmp}/localstack:/tmp/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
